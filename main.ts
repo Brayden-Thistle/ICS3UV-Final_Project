@@ -105,7 +105,7 @@ function grade(totalpoints: number): string {
   } else if (totalpoints < 1000) {
     return "You performed average.";
   } else if (totalpoints < 1350) {
-  return "You performed almost perfect!";
+  return "You performed almost perfectly!";
   } else {
   return "You performed perfectly! That's quite the accomplishment!";
   }
@@ -132,7 +132,7 @@ if (genre1.toLowerCase() === choice) {
     let guess = "";
     console.log(`Question ${currentnumber + 1}: ${HistoryQuestions[currentnumber]}`)
     console.log(HistoryOptions[currentnumber]);
-    while (guess !== HistoryAnswer[currentnumber]) {
+    while(guess !== HistoryAnswer[currentnumber].toLowerCase()) {
       guess = (prompt("enter your answer here:") ?? "").toLowerCase(); 
       if (guess === HistoryAnswer[currentnumber].toLowerCase()) {
         console.log("you answered the right answer!");
@@ -154,7 +154,7 @@ else if (genre2.toLowerCase() === choice) {
     let guess = "";
     console.log(`Question ${currentnumber + 1}: ${MusicQuestions[currentnumber]}`)
     console.log(MusicOptions[currentnumber]);
-    while (guess !== MusicAnswer[currentnumber]) {
+    while (guess !== MusicAnswer[currentnumber].toLowerCase()) {
       guess = (prompt("enter your answer here:") ?? "").toLowerCase();
       if (guess === MusicAnswer[currentnumber].toLowerCase()) {
         console.log("you answered the right answer!");
@@ -176,7 +176,7 @@ else if (genre3.toLowerCase() === choice) {
     let guess = "";
     console.log(`Question ${currentnumber + 1}: ${GamesQuestions[currentnumber]}`)
     console.log(GamesOptions[currentnumber]);
-    while (guess !== GamesAnswer[currentnumber]) {
+    while (guess !== GamesAnswer[currentnumber].toLowerCase()) {
       guess = (prompt("enter your answer here:") ?? "").toLowerCase();
       if (guess === GamesAnswer[currentnumber].toLowerCase()) {
         console.log("you answered the right answer!");
@@ -199,5 +199,5 @@ else {
 console.log("That is the end of the game!");
 console.log(`You earned ${totalpoints} points and got ${percentage(totalpoints).toFixed(2)}%`);
 console.log(grade(totalpoints));
-console.log("That is the end of the game. I hope you enjoyed it!");
+console.log("I hope you enjoyed it!");
 console.log("\nDone.");
