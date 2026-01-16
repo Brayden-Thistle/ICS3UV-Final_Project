@@ -2,19 +2,20 @@
  * @author Brayden Thistle
  * @version 1.0.0
  * @date 2026-01-13
- * @fileoverview this 
+ * @fileoverview this prgoram is a trivia game that has 3 genres and 10 questions for each genre. you are asked multiple choice questions and will be evaluated at the end of the game
  */
 
 let totalpoints = 0;
-const _points = 150;
-
 
 const numbers: string[] = ["1","2","3","4","5","6","7","8","9","10"]
 
+//History, Music and Games questions
 const History1: string[] = ["When did WW1 start ?", "What sparked WW2?", "When was Canada founded?", "What is D-Day?", "Who was the first PM of Canada?", "Who is responsible for authorizing the dropping of the 2 atomic bombs on Hiroshima and Nagasaki during WW2?", "What was the Winnipeg General Strike?", "What was the fur trade in Canada?", "What are residential schools?", "What is the Quiet revolution about?"];
 const Music: string[] = ["Who popularized the Moon Walk?", "what is the most popular music genre", "What song has the most streams on Spotify?", "What is the best selling album of all time?", "What is a Vinyl Record?", "When did rock music emerge?", "Who is the lead singer of KISS", "What artist has the most grammy nominations?", "What is Eminem's most famous song?", "Who founded Bad Boy Records?"];
 const Games: string[] = ["What game has the record for the most consecutive players?", "What game has the most sold copies?", "What is the best selling console of all time?", "What company created the Mario franchise?", "What company owns Xbox?", "What video game is known for having Lara Croft?’", "What game involves a yellow circle that eats things that look like tic-tacs and runs away from ghosts?", "When was Nintendo founded?", "What video game popularized a movement method called tap strafing?", "What was the first console ever?"];
 
+
+//History options for each question
 const HistoryOptions: string[] = [
   "A.July 18, 1914.  B.July 14, 1912.  C.July 31, 1918.  D.August 11, 1938",
   "A.Assasination of Franz Ferdinand.  B.France attacked Germany.  C.Germany's invasion of Poland.  D.Joseph Stalin attacked Berlin.",
@@ -25,8 +26,9 @@ const HistoryOptions: string[] = [
   "A.When the Stock Market crashed.  B.Prohibition.  C.Labour strike for better wages and working conditions.  D.A strike against the government for better healthcare.",
   "A.People traded animals for livestock.  B.The exchange of goods for valuable furs.  C.An illegal animal exchange.  D.Where women trade coats",
   "A.Schools for indigenous children forced to be assimilated with Canadian culture.  B.regular school like every other.  C. A private school for prestigious students.  D. A school for the less fortunate.",
-  "A.A time were people hated being quiet.  B.Where a large group of people revolted to gain more freedom.  C.People of Quebec were tired of the Government not listening to them.  D.The Government took over areas that were dominated by the Catholic Church.",]
+  "A.A time where people hated being quiet.  B.Where a large group of people revolted to gain more freedom.  C.People of Quebec were tired of the Government not listening to them.  D.The Government took over areas that were dominated by the Catholic Church.",]
 
+//Music options for each question
 const MusicOptions: string[] = [
   "A.Madonna.  B.Stevie Wonder.  C.Janet Jackson  D.Michael Jackson.",
   "A.Pop.  B.Hard Rock.  C.Heavy Metal.  D.Rap.",
@@ -39,6 +41,7 @@ const MusicOptions: string[] = [
   "A.The Real Slim Shady.  B.Rap God.  C.Mockingbird.  D.Lose Yourself",
   "A.Kendrick Lamar.  B.Sean Combs(Diddy).  C.2Pac.  D.Kanye West",]
 
+//Games options for each question
 const GamesOptions: string[] = [
   "A. Fortnite.  B. Elden Ring.  C. Grow A Garden.  D.ARC Raiders",
   "A.Super Smash Bros Brawl.  B.Call of Duty Black Ops 2.  C.Lethal Company.  D.Minecraft",
@@ -51,14 +54,17 @@ const GamesOptions: string[] = [
   "A.Titanfall.  B.CS:GO.  C. Apex Legends.  D.Team Fortress 2.",
   "A.The Game Cube.  B.Atari 2600.  C.The Wii  D.Magnavox Odyssey.",]
 
+//History, Music and Games answers
 const HistoryAnswer: string[] = ["A", "C", "D", "A", "B", "C", "C", "B", "A", "D"]
 const MusicAnswer: string[] = ["D", "A", "A", "C", "B", "D", "B", "C", "D", "B"]
 const GamesAnswer: string[] = ["C", "D", "D", "B", "D", "A", "A", "C", "C", "D"]
 
-const genre1 = String("History")
-const genre2 = String("Music")
-const genre3 = String("Games")
+//topics
+const genre1 = "History";
+const genre2 = "Music";
+const genre3 = "Games";
 
+//function to print how good the user did
 function grade(totalpoints: number): string {
   if (totalpoints < 500) {
   return ("You performed under average.");
@@ -67,30 +73,31 @@ function grade(totalpoints: number): string {
   } else if (totalpoints < 1350) {
   return ("You performed almost perfect!");
   } else {
-  return ("You performed perfectly! Thats quite the accomplishment!");
+  return ("You performed perfectly! That's quite the accomplishment!");
   }
 }
-
+//function to calculate totalpoints
 function percentage(totalpoints: number): number {
   return (totalpoints / 1500) * 100
 }
 
+//Intro to the trivia game
 console.log("Welcome to my trivia game! You have 3 genres to choose from. Music, Games or History.");
-console.log("Each genre has 10 questions that are each worth 150 points. you will keep guessing the answer to each question until you are correct, however you will lose 50 points after each guess.");
+console.log("Each genre has 10 questions that are each worth 150 points. You will keep guessing the answer to each question until you are correct, however you will lose 50 points after each guess.");
 console.log("At the end of the game, you will be told how many points you earned and you will be told how good you did based on the amount of points you have.");
 console.log("You will answer each question with A,B,C,D");
-const choice = String(prompt("What genre do you choose:"));
+const choice = prompt("What genre do you choose:");
 
+//History genre loop
 if (genre1 === choice) {
   console.log("You have chosen History");
-
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
-  let points = 150;
-  let _guess = "";
-  console.log(`Question ${numbers[currentnumber]}: ${History1[currentnumber]}`)
+    let points = 150;
+    let _guess = "";
+    console.log(`Question ${numbers[currentnumber]}: ${History1[currentnumber]}`)
     console.log(HistoryOptions[currentnumber]);
     while (_guess !== HistoryAnswer[currentnumber]) {
-      _guess = String(prompt("enter your answer here:")); 
+      _guess = prompt("enter your answer here:") ?? ""; 
       if (_guess === HistoryAnswer[currentnumber]) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
@@ -103,16 +110,16 @@ if (genre1 === choice) {
   }
 }
 
-if (genre2 === choice) {
+//Music Genre loop
+else if (genre2 === choice) {
   console.log("You have chosen Music");
-
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
     let points = 150;
     let _guess = "";
     console.log(`Question ${numbers[currentnumber]}: ${Music[currentnumber]}`)
     console.log(MusicOptions[currentnumber]);
     while (_guess !== MusicAnswer[currentnumber]) {
-      _guess = String(prompt("enter your answer here:"));
+      _guess = prompt("enter your answer here:") ?? "";
       if (_guess === MusicAnswer[currentnumber]) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
@@ -124,7 +131,9 @@ if (genre2 === choice) {
     }
   }
 }
-if (genre3 === choice) {
+
+//Games genre loop
+else if (genre3 === choice) {
   console.log("You have chosen Games");
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
     let points = 150;
@@ -132,7 +141,7 @@ if (genre3 === choice) {
     console.log(`Question ${numbers[currentnumber]}: ${Games[currentnumber]}`)
     console.log(GamesOptions[currentnumber]);
     while (_guess !== GamesAnswer[currentnumber]) {
-      _guess = String(prompt("enter your answer here:"));
+      _guess = prompt("enter your answer here:") ?? "";
       if (_guess === GamesAnswer[currentnumber]) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
@@ -145,6 +154,12 @@ if (genre3 === choice) {
   }
 }
 
+//to let the user know what they typed is incorrect
+else {
+  console.log("This does not work.");
+}
+
+//saying the end of the game along with the points and percentage with the grade.
 console.log("That is the end of the game!");
 console.log(`You earned ${totalpoints} points and got ${percentage(totalpoints)}%`);
 console.log(grade(totalpoints));
