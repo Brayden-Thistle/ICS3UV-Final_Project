@@ -8,9 +8,41 @@
 let totalpoints = 0;
 
 //History, Music and Games questions
-const History1: string[] = ["When did WW1 start ?", "What sparked WW2?", "When was Canada founded?", "What is D-Day?", "Who was the first PM of Canada?", "Who is responsible for authorizing the dropping of the 2 atomic bombs on Hiroshima and Nagasaki during WW2?", "What was the Winnipeg General Strike?", "What was the fur trade in Canada?", "What are residential schools?", "What is the Quiet revolution about?"];
-const Music: string[] = ["Who popularized the Moon Walk?", "what is the most popular music genre", "What song has the most streams on Spotify?", "What is the best selling album of all time?", "What is a Vinyl Record?", "When did rock music emerge?", "Who is the lead singer of KISS", "What artist has the most grammy nominations?", "What is Eminem's most famous song?", "Who founded Bad Boy Records?"];
-const Games: string[] = ["What game has the record for the most consecutive players?", "What game has the most sold copies?", "What is the best selling console of all time?", "What company created the Mario franchise?", "What company owns Xbox?", "What video game is known for having Lara Croft?’", "What game involves a yellow circle that eats things that look like tic-tacs and runs away from ghosts?", "When was Nintendo founded?", "What video game popularized a movement method called tap strafing?", "What was the first console ever?"];
+const HistoryQuestions: string[] = [
+  "When did WW1 start ?",
+  "What sparked WW2?",
+  "When was Canada founded?", 
+  "What is D-Day?",
+  "Who was the first PM of Canada?", 
+  "Who is responsible for authorizing the dropping of the 2 atomic bombs on Hiroshima and Nagasaki during WW2?", 
+  "What was the Winnipeg General Strike?",
+  "What was the fur trade in Canada?",
+  "What are residential schools?",
+  "What is the Quiet revolution about?"];
+const MusicQuestions: string[] = [
+  "Who popularized the Moon Walk?",
+  "what is the most popular music genre",
+  "What song has the most streams on Spotify?",
+  "What is the best selling album of all time?",
+  "What is a Vinyl Record?",
+  "When did rock music emerge?",
+  "Who is the lead singer of KISS",
+  "What artist has the most grammy nominations?",
+  "What is Eminem's most famous song?",
+  "Who founded Bad Boy Records?"
+];
+const GamesQuestions: string[] = [
+  "What game has the record for the most consecutive players?", 
+  "What game has the most sold copies?", 
+  "What is the best selling console of all time?",
+  "What company created the Mario franchise?", 
+  "What company owns Xbox?", 
+  "What video game is known for having Lara Croft?", 
+  "What game involves a yellow circle that eats things that look like tic-tacs and runs away from ghosts?", 
+  "When was Nintendo founded?",
+  "What video game popularized a movement method called tap strafing?",
+  "What was the first console ever?"
+];
 
 
 //History options for each question
@@ -24,7 +56,8 @@ const HistoryOptions: string[] = [
   "A.When the Stock Market crashed.  B.Prohibition.  C.Labour strike for better wages and working conditions.  D.A strike against the government for better healthcare.",
   "A.People traded animals for livestock.  B.The exchange of goods for valuable furs.  C.An illegal animal exchange.  D.Where women trade coats",
   "A.Schools for indigenous children forced to be assimilated with Canadian culture.  B.regular school like every other.  C. A private school for prestigious students.  D. A school for the less fortunate.",
-  "A.A time where people hated being quiet.  B.Where a large group of people revolted to gain more freedom.  C.People of Quebec were tired of the Government not listening to them.  D.The Government took over areas that were dominated by the Catholic Church.",];
+  "A.A time where people hated being quiet.  B.Where a large group of people revolted to gain more freedom.  C.People of Quebec were tired of the Government not listening to them.  D.The Government took over areas that were dominated by the Catholic Church."
+];
 
 //Music options for each question
 const MusicOptions: string[] = [
@@ -37,7 +70,8 @@ const MusicOptions: string[] = [
   "A.James Hetfield.  B.Paul Stanley.  C.Vinnie Vincent.  D.Peter Criss",
   "A.Kanye West.  B.JAY-Z.  C.Beyoncé. D.Quincy Jones",
   "A.The Real Slim Shady.  B.Rap God.  C.Mockingbird.  D.Lose Yourself",
-  "A.Kendrick Lamar.  B.Sean Combs(Diddy).  C.2Pac.  D.Kanye West",];
+  "A.Kendrick Lamar.  B.Sean Combs(Diddy).  C.2Pac.  D.Kanye West"
+];
 
 //Games options for each question
 const GamesOptions: string[] = [
@@ -50,7 +84,8 @@ const GamesOptions: string[] = [
   "A.Pacman.  B.Frogger.  C.Donkey Kong.  D.Centipede.",
   "A.1990.  B.2001.  C.1889.  D. 1963.",
   "A.Titanfall.  B.CS:GO.  C. Apex Legends.  D.Team Fortress 2.",
-  "A.The Game Cube.  B.Atari 2600.  C.The Wii  D.Magnavox Odyssey.",];
+  "A.The Game Cube.  B.Atari 2600.  C.The Wii  D.Magnavox Odyssey."
+];
 
 //History, Music and Games answers
 const HistoryAnswer: string[] = ["A", "C", "D", "A", "B", "C", "C", "B", "A", "D"];
@@ -92,7 +127,7 @@ if (genre1.toLowerCase() === choice) {
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
     let points = 150;
     let guess = "";
-    console.log(`Question ${currentnumber + 1}: ${History1[currentnumber]}`)
+    console.log(`Question ${currentnumber + 1}: ${HistoryQuestions[currentnumber]}`)
     console.log(HistoryOptions[currentnumber]);
     while (guess !== HistoryAnswer[currentnumber]) {
       guess = (prompt("enter your answer here:") ?? "").toLowerCase(); 
@@ -114,7 +149,7 @@ else if (genre2.toLowerCase() === choice) {
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
     let points = 150;
     let guess = "";
-    console.log(`Question ${currentnumber + 1}: ${Music[currentnumber]}`)
+    console.log(`Question ${currentnumber + 1}: ${MusicQuestions[currentnumber]}`)
     console.log(MusicOptions[currentnumber]);
     while (guess !== MusicAnswer[currentnumber]) {
       guess = (prompt("enter your answer here:") ?? "").toLowerCase();
@@ -136,7 +171,7 @@ else if (genre3.toLowerCase() === choice) {
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
     let points = 150;
     let guess = "";
-    console.log(`Question ${currentnumber + 1}: ${Games[currentnumber]}`)
+    console.log(`Question ${currentnumber + 1}: ${GamesQuestions[currentnumber]}`)
     console.log(GamesOptions[currentnumber]);
     while (guess !== GamesAnswer[currentnumber]) {
       guess = (prompt("enter your answer here:") ?? "").toLowerCase();
