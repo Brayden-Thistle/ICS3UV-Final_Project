@@ -5,10 +5,9 @@
  * @fileoverview this 
  */
 
-const _guess = "";
 let totalpoints = 0;
-const _percentage = (totalpoints / 10) * 100
 const _points = 150;
+
 
 const numbers: string[] = ["1","2","3","4","5","6","7","8","9","10"]
 
@@ -65,11 +64,15 @@ function grade(totalpoints: number): string {
   return ("You performed under average.");
   } else if (totalpoints < 1000) {
     return ("You performed average.");
-  } else if (totalpoints < 135) {
+  } else if (totalpoints < 1350) {
   return ("You performed almost perfect!");
   } else {
   return ("You performed perfectly! Thats quite the accomplishment!");
   }
+}
+
+function percentage(totalpoints: number): number {
+  return (totalpoints / 1500) * 100
 }
 
 console.log("Welcome to my trivia game! You have 3 genres to choose from. Music, Games or History.");
@@ -143,7 +146,7 @@ if (genre3 === choice) {
 }
 
 console.log("That is the end of the game!");
-console.log(`You earned ${totalpoints} points and got ${_percentage}`);
+console.log(`You earned ${totalpoints} points and got ${percentage(totalpoints)}%`);
 console.log(grade(totalpoints));
 console.log("That is the end of the game. I hope you enjoyed it!");
 console.log("\nDone.");
