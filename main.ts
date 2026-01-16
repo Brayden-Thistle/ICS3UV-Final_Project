@@ -24,7 +24,7 @@ const HistoryOptions: string[] = [
   "A.When the Stock Market crashed.  B.Prohibition.  C.Labour strike for better wages and working conditions.  D.A strike against the government for better healthcare.",
   "A.People traded animals for livestock.  B.The exchange of goods for valuable furs.  C.An illegal animal exchange.  D.Where women trade coats",
   "A.Schools for indigenous children forced to be assimilated with Canadian culture.  B.regular school like every other.  C. A private school for prestigious students.  D. A school for the less fortunate.",
-  "A.A time where people hated being quiet.  B.Where a large group of people revolted to gain more freedom.  C.People of Quebec were tired of the Government not listening to them.  D.The Government took over areas that were dominated by the Catholic Church.",]
+  "A.A time where people hated being quiet.  B.Where a large group of people revolted to gain more freedom.  C.People of Quebec were tired of the Government not listening to them.  D.The Government took over areas that were dominated by the Catholic Church.",];
 
 //Music options for each question
 const MusicOptions: string[] = [
@@ -37,7 +37,7 @@ const MusicOptions: string[] = [
   "A.James Hetfield.  B.Paul Stanley.  C.Vinnie Vincent.  D.Peter Criss",
   "A.Kanye West.  B.JAY-Z.  C.Beyoncé. D.Quincy Jones",
   "A.The Real Slim Shady.  B.Rap God.  C.Mockingbird.  D.Lose Yourself",
-  "A.Kendrick Lamar.  B.Sean Combs(Diddy).  C.2Pac.  D.Kanye West",]
+  "A.Kendrick Lamar.  B.Sean Combs(Diddy).  C.2Pac.  D.Kanye West",];
 
 //Games options for each question
 const GamesOptions: string[] = [
@@ -50,12 +50,12 @@ const GamesOptions: string[] = [
   "A.Pacman.  B.Frogger.  C.Donkey Kong.  D.Centipede.",
   "A.1990.  B.2001.  C.1889.  D. 1963.",
   "A.Titanfall.  B.CS:GO.  C. Apex Legends.  D.Team Fortress 2.",
-  "A.The Game Cube.  B.Atari 2600.  C.The Wii  D.Magnavox Odyssey.",]
+  "A.The Game Cube.  B.Atari 2600.  C.The Wii  D.Magnavox Odyssey.",];
 
 //History, Music and Games answers
-const HistoryAnswer: string[] = ["A", "C", "D", "A", "B", "C", "C", "B", "A", "D"]
-const MusicAnswer: string[] = ["D", "A", "A", "C", "B", "D", "B", "C", "D", "B"]
-const GamesAnswer: string[] = ["C", "D", "D", "B", "D", "A", "A", "C", "C", "D"]
+const HistoryAnswer: string[] = ["A", "C", "D", "A", "B", "C", "C", "B", "A", "D"];
+const MusicAnswer: string[] = ["D", "A", "A", "C", "B", "D", "B", "C", "D", "B"];
+const GamesAnswer: string[] = ["C", "D", "D", "B", "D", "A", "A", "C", "C", "D"];
 
 //topics
 const genre1 = "History";
@@ -76,7 +76,7 @@ function grade(totalpoints: number): string {
 }
 //function to calculate totalpoints
 function percentage(totalpoints: number): number {
-  return (totalpoints / 1500) * 100
+  return (totalpoints / 1500) * 100;
 }
 
 //Intro to the trivia game
@@ -99,9 +99,9 @@ if (genre1.toLowerCase() === choice) {
       if (guess === HistoryAnswer[currentnumber].toLowerCase()) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
-        totalpoints += points
+        totalpoints += points;
       } else {
-        points -= 50
+        points -= 50;
         console.log("incorrect, try again.");
       }
     }
@@ -121,9 +121,9 @@ else if (genre2.toLowerCase() === choice) {
       if (guess === MusicAnswer[currentnumber].toLowerCase()) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
-        totalpoints += points
+        totalpoints += points;
       } else {
-        points -= 50
+        points -= 50;
         console.log("incorrect, try again.");
       }
     }
@@ -143,9 +143,9 @@ else if (genre3.toLowerCase() === choice) {
       if (guess === GamesAnswer[currentnumber].toLowerCase()) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
-        totalpoints += points
+        totalpoints += points;
       } else {
-        points -= 50
+        points -= 50;
         console.log("incorrect, try again.");
       }
     }
