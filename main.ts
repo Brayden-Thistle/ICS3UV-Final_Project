@@ -5,11 +5,10 @@
  * @fileoverview this 
  */
 
-let choice: string;
-let guess = "";
+const _guess = "";
 let totalpoints = 0;
-const percentage = (totalpoints / 10) * 100
-let points = 150;
+const _percentage = (totalpoints / 10) * 100
+const _points = 150;
 
 const numbers: string[] = ["1","2","3","4","5","6","7","8","9","10"]
 
@@ -66,8 +65,10 @@ function grade(totalpoints: number): string {
   return ("You performed under average.");
   } else if (totalpoints < 1000) {
     return ("You performed average.");
+  } else if (totalpoints < 135) {
+  return ("You performed almost perfect!");
   } else {
-    return ("You performed perfectly! Thats quite the accomplishment!");
+  return ("You performed perfectly! Thats quite the accomplishment!");
   }
 }
 
@@ -75,19 +76,19 @@ console.log("Welcome to my trivia game! You have 3 genres to choose from. Music,
 console.log("Each genre has 10 questions that are each worth 150 points. you will keep guessing the answer to each question until you are correct, however you will lose 50 points after each guess.");
 console.log("At the end of the game, you will be told how many points you earned and you will be told how good you did based on the amount of points you have.");
 console.log("You will answer each question with A,B,C,D");
-choice = String(prompt("What genre do you choose:"));
+const choice = String(prompt("What genre do you choose:"));
 
 if (genre1 === choice) {
   console.log("You have chosen History");
 
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
   let points = 150;
-  let guess = "";
+  let _guess = "";
   console.log(`Question ${numbers[currentnumber]}: ${History1[currentnumber]}`)
     console.log(HistoryOptions[currentnumber]);
-    while (guess !== HistoryAnswer[currentnumber]) {
-      guess = String(prompt("enter your answer here:")); 
-      if (guess === HistoryAnswer[currentnumber]) {
+    while (_guess !== HistoryAnswer[currentnumber]) {
+      _guess = String(prompt("enter your answer here:")); 
+      if (_guess === HistoryAnswer[currentnumber]) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
         totalpoints += points
@@ -104,12 +105,12 @@ if (genre2 === choice) {
 
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
     let points = 150;
-    let guess = "";
+    let _guess = "";
     console.log(`Question ${numbers[currentnumber]}: ${Music[currentnumber]}`)
     console.log(MusicOptions[currentnumber]);
-    while (guess !== MusicAnswer[currentnumber]) {
-      guess = String(prompt("enter your answer here:"));
-      if (guess === MusicAnswer[currentnumber]) {
+    while (_guess !== MusicAnswer[currentnumber]) {
+      _guess = String(prompt("enter your answer here:"));
+      if (_guess === MusicAnswer[currentnumber]) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
         totalpoints += points
@@ -124,12 +125,12 @@ if (genre3 === choice) {
   console.log("You have chosen Games");
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
     let points = 150;
-    let guess = "";
+    let _guess = "";
     console.log(`Question ${numbers[currentnumber]}: ${Games[currentnumber]}`)
     console.log(GamesOptions[currentnumber]);
-    while (guess !== GamesAnswer[currentnumber]) {
-      guess = String(prompt("enter your answer here:"));
-      if (guess === GamesAnswer[currentnumber]) {
+    while (_guess !== GamesAnswer[currentnumber]) {
+      _guess = String(prompt("enter your answer here:"));
+      if (_guess === GamesAnswer[currentnumber]) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
         totalpoints += points
@@ -142,5 +143,7 @@ if (genre3 === choice) {
 }
 
 console.log("That is the end of the game!");
-console.log(`You earned ${totalpoints} points`);
+console.log(`You earned ${totalpoints} points and got ${_percentage}`);
 console.log(grade(totalpoints));
+console.log("That is the end of the game. I hope you enjoyed it!");
+console.log("\nDone.");
