@@ -18,7 +18,9 @@ const HistoryQuestions: string[] = [
   "What was the Winnipeg General Strike?",
   "What was the fur trade in Canada?",
   "What are residential schools?",
-  "What is the Quiet revolution about?"];
+  "What is the Quiet revolution about?"
+];
+
 const MusicQuestions: string[] = [
   "Who popularized the Moon Walk?",
   "what is the most popular music genre",
@@ -31,6 +33,7 @@ const MusicQuestions: string[] = [
   "What is Eminem's most famous song?",
   "Who founded Bad Boy Records?"
 ];
+
 const GamesQuestions: string[] = [
   "What game has the record for the most consecutive players?", 
   "What game has the most sold copies?", 
@@ -43,7 +46,6 @@ const GamesQuestions: string[] = [
   "What video game popularized a movement method called tap strafing?",
   "What was the first console ever?"
 ];
-
 
 //History options for each question
 const HistoryOptions: string[] = [
@@ -92,7 +94,6 @@ const HistoryAnswer: string[] = ["A", "C", "D", "A", "B", "C", "C", "B", "A", "D
 const MusicAnswer: string[] = ["D", "A", "A", "C", "B", "D", "B", "C", "D", "B"];
 const GamesAnswer: string[] = ["C", "D", "D", "B", "D", "A", "A", "C", "C", "D"];
 
-//topics
 const genre1 = "History";
 const genre2 = "Music";
 const genre3 = "Games";
@@ -100,13 +101,13 @@ const genre3 = "Games";
 //function to print how good the user did
 function grade(totalpoints: number): string {
   if (totalpoints < 500) {
-  return ("You performed under average.");
+  return "You performed under average.";
   } else if (totalpoints < 1000) {
-    return ("You performed average.");
+    return "You performed average.";
   } else if (totalpoints < 1350) {
-  return ("You performed almost perfect!");
+  return "You performed almost perfect!";
   } else {
-  return ("You performed perfectly! That's quite the accomplishment!");
+  return "You performed perfectly! That's quite the accomplishment!";
   }
 }
 //function to calculate totalpoints
@@ -120,6 +121,8 @@ console.log("Each genre has 10 questions that are each worth 150 points. You wil
 console.log("At the end of the game, you will be told how many points you earned and you will be told how good you did based on the amount of points you have.");
 console.log("You will answer each question with A,B,C or D");
 const choice = (prompt("What genre do you choose:") ?? "").toLowerCase();
+
+
 
 //History genre loop
 if (genre1.toLowerCase() === choice) {
