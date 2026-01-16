@@ -2,12 +2,10 @@
  * @author Brayden Thistle
  * @version 1.0.0
  * @date 2026-01-13
- * @fileoverview this prgoram is a trivia game that has 3 genres and 10 questions for each genre. you are asked multiple choice questions and will be evaluated at the end of the game
+ * @fileoverview this program is a trivia game that has 3 genres and 10 questions for each genre. you are asked multiple choice questions and will be evaluated at the end of the game
  */
 
 let totalpoints = 0;
-
-const numbers: string[] = ["1","2","3","4","5","6","7","8","9","10"]
 
 //History, Music and Games questions
 const History1: string[] = ["When did WW1 start ?", "What sparked WW2?", "When was Canada founded?", "What is D-Day?", "Who was the first PM of Canada?", "Who is responsible for authorizing the dropping of the 2 atomic bombs on Hiroshima and Nagasaki during WW2?", "What was the Winnipeg General Strike?", "What was the fur trade in Canada?", "What are residential schools?", "What is the Quiet revolution about?"];
@@ -85,20 +83,20 @@ function percentage(totalpoints: number): number {
 console.log("Welcome to my trivia game! You have 3 genres to choose from. Music, Games or History.");
 console.log("Each genre has 10 questions that are each worth 150 points. You will keep guessing the answer to each question until you are correct, however you will lose 50 points after each guess.");
 console.log("At the end of the game, you will be told how many points you earned and you will be told how good you did based on the amount of points you have.");
-console.log("You will answer each question with A,B,C,D");
-const choice = prompt("What genre do you choose:");
+console.log("You will answer each question with A,B,C or D");
+const choice = (prompt("What genre do you choose:") ?? "").toLowerCase();
 
 //History genre loop
-if (genre1 === choice) {
+if (genre1.toLowerCase() === choice) {
   console.log("You have chosen History");
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
     let points = 150;
-    let _guess = "";
-    console.log(`Question ${numbers[currentnumber]}: ${History1[currentnumber]}`)
+    let guess = "";
+    console.log(`Question ${currentnumber + 1}: ${History1[currentnumber]}`)
     console.log(HistoryOptions[currentnumber]);
-    while (_guess !== HistoryAnswer[currentnumber]) {
-      _guess = prompt("enter your answer here:") ?? ""; 
-      if (_guess === HistoryAnswer[currentnumber]) {
+    while (guess !== HistoryAnswer[currentnumber]) {
+      guess = (prompt("enter your answer here:") ?? "").toLowerCase(); 
+      if (guess === HistoryAnswer[currentnumber].toLowerCase()) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
         totalpoints += points
@@ -111,16 +109,16 @@ if (genre1 === choice) {
 }
 
 //Music Genre loop
-else if (genre2 === choice) {
+else if (genre2.toLowerCase() === choice) {
   console.log("You have chosen Music");
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
     let points = 150;
-    let _guess = "";
-    console.log(`Question ${numbers[currentnumber]}: ${Music[currentnumber]}`)
+    let guess = "";
+    console.log(`Question ${currentnumber + 1}: ${Music[currentnumber]}`)
     console.log(MusicOptions[currentnumber]);
-    while (_guess !== MusicAnswer[currentnumber]) {
-      _guess = prompt("enter your answer here:") ?? "";
-      if (_guess === MusicAnswer[currentnumber]) {
+    while (guess !== MusicAnswer[currentnumber]) {
+      guess = (prompt("enter your answer here:") ?? "").toLowerCase();
+      if (guess === MusicAnswer[currentnumber].toLowerCase()) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
         totalpoints += points
@@ -133,16 +131,16 @@ else if (genre2 === choice) {
 }
 
 //Games genre loop
-else if (genre3 === choice) {
+else if (genre3.toLowerCase() === choice) {
   console.log("You have chosen Games");
   for (let currentnumber = 0; currentnumber < 10; currentnumber++) {
     let points = 150;
-    let _guess = "";
-    console.log(`Question ${numbers[currentnumber]}: ${Games[currentnumber]}`)
+    let guess = "";
+    console.log(`Question ${currentnumber + 1}: ${Games[currentnumber]}`)
     console.log(GamesOptions[currentnumber]);
-    while (_guess !== GamesAnswer[currentnumber]) {
-      _guess = prompt("enter your answer here:") ?? "";
-      if (_guess === GamesAnswer[currentnumber]) {
+    while (guess !== GamesAnswer[currentnumber]) {
+      guess = (prompt("enter your answer here:") ?? "").toLowerCase();
+      if (guess === GamesAnswer[currentnumber].toLowerCase()) {
         console.log("you answered the right answer!");
         console.log(`you earned ${points} points`);
         totalpoints += points
@@ -161,7 +159,7 @@ else {
 
 //saying the end of the game along with the points and percentage with the grade.
 console.log("That is the end of the game!");
-console.log(`You earned ${totalpoints} points and got ${percentage(totalpoints)}%`);
+console.log(`You earned ${totalpoints} points and got ${percentage(totalpoints).toFixed(2)}%`);
 console.log(grade(totalpoints));
 console.log("That is the end of the game. I hope you enjoyed it!");
 console.log("\nDone.");
